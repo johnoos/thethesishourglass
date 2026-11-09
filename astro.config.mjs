@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import cloudflare from '@astrojs/cloudflare';
 import { vaultFiles } from './src/data/vault.js';
 
-const SITE = 'https://thelogicpipeline.johnoosthuizen.com';
+const SITE = 'https://johnoosthuizen.com';
 const keepOutOfSitemap = ['certs.pdf', 'transcripts.pdf'];
 
 export default defineConfig({
