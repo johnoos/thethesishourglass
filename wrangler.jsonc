@@ -1,12 +1,12 @@
 {
-  "name": "theargumenthourglass",
+  "name": "thethesishourglass",
   "compatibility_date": "2026-10-01",
   // ...keep the generated "main", "compatibility_date", "assets", etc...
 
   "routes": [
     { "pattern": "johnoosthuizen.com", "custom_domain": true },
     { "pattern": "www.johnoosthuizen.com", "custom_domain": true },
-    { "pattern": "theargumenthourglass.johnoosthuizen.com", "custom_domain": true }
+    { "pattern": "thethesishourglass.johnoosthuizen.com", "custom_domain": true }
   ],
 
   "observability": {
