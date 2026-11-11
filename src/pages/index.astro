@@ -1,4 +1,5 @@
 ---
+import Logo from "../components/Logo.astro";
 import Layout from '../layouts/Layout.astro';
 
 export const prerender = true;
@@ -109,17 +110,9 @@ const faqs = [
 
     <header class="hero-section container">
       <div class="brand-monogram">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          style="display:block;width:64px;height:64px;fill:none;stroke:currentColor;stroke-width:1.5;margin:0 auto;"
-        >
-          <path d="M6 3h12M6 21h12M6 3l6 9 6-9M6 21l6-9 6 9" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
+        <Logo />
       </div>
 
-      <p class="brand-name">The Thesis Hourglass</p>
       <h1>Write a thesis argument that holds up</h1>
       <p class="tagline">
         A four-week online clinic for music postgraduates. Groups of four. Your own writing, scored and discussed every week.
