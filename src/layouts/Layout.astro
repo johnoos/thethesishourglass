@@ -26,6 +26,9 @@ const imageURL = new URL(image, Astro.site);
 		<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 		<meta property="og:image" content={imageURL} />
 		<meta property="og:image:alt" content="The Thesis Hourglass: clear thesis arguments for music postgraduates" />
 		<meta name="twitter:card" content="summary_large_image" />
@@ -39,8 +42,10 @@ const imageURL = new URL(image, Astro.site);
 <style is:global>
 	/* Design System Constants */
 	:root {
-		--font-serif: "Georgia", serif;
-		--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+		/* Charter style, shared with the studio site: Libre Caslon headings, Inter body */
+		--font-serif: "Libre Caslon Text", Georgia, serif;
+		--font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+		--font-mono: "JetBrains Mono", monospace;
 		
 		/* Fluid Type Scale */
 		--step-0: clamp(0.88rem, 0.83rem + 0.24vw, 1.00rem);
@@ -54,29 +59,23 @@ const imageURL = new URL(image, Astro.site);
 		--gutter: 1.5rem;
 	}
 
-	/* Dynamic System Colour Palette (Responsive Themes) */
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--bg-canvas: #1a1a1a;
-			--bg-surface: #222222;
-			--text-primary: #ffffff;
-			--text-muted: #a0a0a0;
-			--border-accent: #333333;
-			--action-hover: #ffffff;
-			--action-text-hover: #1a1a1a;
-		}
-	}
-
-	@media (prefers-color-scheme: light) {
-		:root {
-			--bg-canvas: #fcfcfc;
-			--bg-surface: #f4f4f4;
-			--text-primary: #1a1a1a;
-			--text-muted: #666666;
-			--border-accent: #e0e0e0;
-			--action-hover: #1a1a1a;
-			--action-text-hover: #ffffff;
-		}
+	/* Charter palette (navy and brass on warm cream), shared with the studio site */
+	:root {
+		color-scheme: light;
+		--bg-canvas: #f7f4ec;      /* warm cream paper */
+		--bg-surface: #fffdf8;     /* bright leaf: cards and panels */
+		--bg-band: #ece5d4;        /* deeper cream: callouts, table header */
+		--text-primary: #1c1f26;   /* near-black ink */
+		--text-muted: #4f5360;     /* graphite */
+		--border-accent: #d9cfb8;  /* pale brass hairline */
+		--outline: #b08d57;        /* burnished brass rule */
+		--primary: #14213d;        /* deep navy */
+		--on-primary: #f7f4ec;
+		--secondary: #2d5a4a;      /* bottle green */
+		--tertiary: #8a6a35;       /* dark brass (small accent text) */
+		--brand-accent: #14213d;   /* primary actions */
+		--action-hover: #14213d;
+		--action-text-hover: #f7f4ec;
 	}
 
 	/* Structural Resets */
@@ -85,7 +84,7 @@ const imageURL = new URL(image, Astro.site);
 	}
 
 	html {
-		font-family: var(--font-serif);
+		font-family: var(--font-sans);
 		font-size: 100%;
 		background-color: var(--bg-canvas);
 		color: var(--text-primary);
@@ -98,12 +97,14 @@ const imageURL = new URL(image, Astro.site);
 		margin: 0;
 		padding: 0;
 		text-rendering: optimizeLegibility;
+		border-top: 6px solid var(--primary);
+		box-shadow: inset 0 2px 0 var(--outline);
 		-webkit-font-smoothing: antialiased;
 	}
 
 	/* Micro Typography Overrides */
-	h1, h2, h3, th {
-		font-family: var(--font-sans);
+	h1, h2, h3 {
+		font-family: var(--font-serif);
 		line-height: 1.2;
 		margin-top: 0;
 		font-weight: 700;
@@ -149,46 +150,45 @@ const imageURL = new URL(image, Astro.site);
 
 	.pipeline-main { padding: 4rem 0; }
   .hero-section { text-align: center; margin-bottom: 6rem; }
-  .brand-monogram { display: block; width: 100%; margin-bottom: 1.5rem; text-align: center; color: #127C44; }
+  .brand-monogram { display: block; width: 100%; margin-bottom: 1.5rem; text-align: center; color: var(--secondary); }
   .brand-monogram .logo { display: block; height: 76px; width: auto; max-width: 100%; margin: 0 auto; }
-  @media (prefers-color-scheme: dark) { .brand-monogram { color: #38b06c; } }
   .tagline { font-size: var(--step-1); color: var(--text-muted); max-width: 55ch; margin: 1rem auto 2.5rem auto; line-height: 1.6; }
   .identity-badge-row { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-  .badge { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-accent); border-radius: 4px; }
+  .badge { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-accent); border-radius: 2px; }
   
   .hourglass-section, .registry-section, .clinic-section, .coaching-section { margin-bottom: 6rem; }
-  .hourglass-section h2, .registry-section h2, .clinic-section h2, .coaching-section h2 { border-left: 2px solid var(--text-primary); padding-left: 1rem; margin-bottom: 3rem; }
+  .hourglass-section h2, .registry-section h2, .clinic-section h2, .coaching-section h2 { border-left: 3px solid var(--outline); padding-left: 1rem; margin-bottom: 3rem; }
   
   .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-  .matrix-node { background: var(--bg-surface); border: 1px solid var(--border-accent); padding: 2rem; border-radius: 4px; }
-  .active-core { border: 1px dashed var(--text-primary); background: transparent; }
+  .matrix-node { background: var(--bg-surface); border: 1px solid var(--border-accent); border-top: 2px solid var(--outline); padding: 2rem; border-radius: 2px; }
+  .active-core { border: 1px solid var(--primary); border-top: 2px solid var(--primary); background: var(--bg-band); }
   
   .section-meta { margin-bottom: 3rem; }
   .section-desc { color: var(--text-muted); font-size: var(--step-1); max-width: 65ch; }
   .distortion-cluster { display: flex; flex-direction: column; gap: 1.5rem; }
   
-  .inverted-classroom-callout { background: var(--bg-surface); border-left: 3px solid var(--brand-accent); padding: 2rem; margin-bottom: 2.5rem; border-radius: 0 4px 4px 0; }
+  .inverted-classroom-callout { background: var(--bg-band); border-left: 3px solid var(--outline); padding: 2rem; margin-bottom: 2.5rem; border-radius: 0 2px 2px 0; }
   .inverted-classroom-callout h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: var(--step-1); }
   .inverted-classroom-callout p { margin: 0; color: var(--text-muted); font-size: var(--step-0); line-height: 1.6; }
   .clinic-timeline-wrapper h3 { font-size: var(--step-1); margin-bottom: 1.5rem; }
   .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
-  .time-slot { background: var(--bg-surface); border: 1px solid var(--border-accent); padding: 1rem; border-radius: 4px; font-size: var(--step-0); }
-  .time-slot strong { color: var(--brand-accent); display: block; font-family: var(--font-sans); margin-bottom: 0.25rem; }
+  .time-slot { background: var(--bg-surface); border: 1px solid var(--border-accent); padding: 1rem; border-radius: 2px; font-size: var(--step-0); }
+  .time-slot strong { color: var(--tertiary); display: block; font-family: var(--font-sans); margin-bottom: 0.25rem; }
   .clinic-footnote { font-size: var(--step-0); color: var(--text-muted); font-style: italic; }
 
   .table-responsive { width: 100%; overflow-x: auto; }
   .pricing-table { width: 100%; border-collapse: collapse; text-align: left; font-size: var(--step-0); }
   .pricing-table th, .pricing-table td { padding: 1.25rem; border-bottom: 1px solid var(--border-accent); }
-  .pricing-table th { background: var(--bg-surface); color: var(--text-primary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; }
+  .pricing-table th { font-family: var(--font-sans); background: var(--bg-band); color: var(--text-primary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; }
   .pricing-table tr:hover td { background: var(--bg-surface); }
 
   .pipeline-gateways { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin-top: 4rem; border-top: 1px solid var(--border-accent); padding-top: 4rem; }
-  .gate-card { background: var(--bg-surface); border: 1px solid var(--border-accent); padding: 2.5rem; border-radius: 4px; display: flex; flex-direction: column; justify-content: space-between; }
-  .highlighted-gate { border-color: var(--text-primary); }
+  .gate-card { background: var(--bg-surface); border: 1px solid var(--border-accent); border-top: 2px solid var(--outline); padding: 2.5rem; border-radius: 2px; display: flex; flex-direction: column; justify-content: space-between; }
+  .highlighted-gate { border-color: var(--primary); border-top-color: var(--primary); }
   .gate-card h3 { margin-bottom: 1rem; }
   .gate-card p { color: var(--text-muted); margin-bottom: 2rem; font-size: var(--step-0); }
   .gate-link { font-family: var(--font-sans); font-weight: 600; text-decoration: none; font-size: var(--step-0); }
-  .action-btn { display: block; text-align: center; border: 1px solid var(--text-primary); padding: 0.75rem; border-radius: 4px; transition: all 0.2s ease; }
+  .action-btn { display: block; text-align: center; border: 1px solid var(--primary); padding: 0.75rem; border-radius: 2px; transition: all 0.2s ease; }
   .action-btn:hover { background: var(--action-hover); color: var(--action-text-hover); }
-  .legal-attribution { text-align: center; margin-top: 6rem; font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-muted); }
+  .legal-attribution { text-align: center; margin-top: 6rem; border-top: 1px solid var(--outline); padding-top: 1.5rem; font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-muted); }
 </style>

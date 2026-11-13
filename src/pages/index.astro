@@ -353,28 +353,28 @@ const faqs = [
 <style>
   .brand-name { font-family: var(--font-sans); font-weight: 600; color: var(--text-muted); margin: 0 0 0.75rem 0; }
   .hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
-  .button-primary, .button-secondary { font-family: var(--font-sans); font-size: var(--step-0); font-weight: 600; text-decoration: none; padding: 0.9rem 1.6rem; border-radius: 4px; border: 1px solid var(--brand-accent, #127C44); }
-  .button-primary { background: var(--brand-accent, #127C44); color: #ffffff; }
-  .button-primary:hover { filter: brightness(0.92); }
-  .button-secondary { color: var(--text-primary); border-color: var(--text-primary); }
+  .button-primary, .button-secondary { font-family: var(--font-sans); font-size: var(--step-0); font-weight: 600; text-decoration: none; padding: 0.9rem 1.6rem; border-radius: 2px; border: 1px solid var(--primary); }
+  .button-primary { background: var(--primary); color: var(--on-primary); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8125rem; }
+  .button-primary:hover { background: var(--secondary); }
+  .button-secondary { color: var(--primary); border-color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8125rem; }
   .button-secondary:hover { background: var(--action-hover); color: var(--action-text-hover); }
-  .button-primary:focus-visible, .button-secondary:focus-visible, .gate-link:focus-visible, summary:focus-visible { outline: 3px solid var(--brand-accent, #127C44); outline-offset: 3px; }
+  .button-primary:focus-visible, .button-secondary:focus-visible, .gate-link:focus-visible, summary:focus-visible { outline: 3px solid var(--outline); outline-offset: 3px; }
   .button-primary, .button-secondary { display: inline-block; min-width: 11rem; text-align: center; }
   .gate-card .button-primary, .gate-card .button-secondary { align-self: flex-start; }
   .hero-note { color: var(--text-muted); font-size: var(--step-0); margin: 0; }
 
   .audience-section, .leave-section, .about-section, .faq-section { margin-bottom: 5rem; }
-  .audience-section h2, .leave-section h2, .about-section h2, .faq-section h2 { border-left: 2px solid var(--text-primary); padding-left: 1rem; margin-bottom: 2rem; }
+  .audience-section h2, .leave-section h2, .about-section h2, .faq-section h2 { border-left: 3px solid var(--outline); padding-left: 1rem; margin-bottom: 2rem; }
   .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: start; }
   .plain-list { margin: 0; padding-left: 1.25rem; max-width: 62ch; }
   .plain-list li { margin-bottom: 0.75rem; }
-  .note-box { background: var(--bg-surface); border: 1px solid var(--border-accent); padding: 1.5rem 2rem; border-radius: 4px; }
+  .note-box { background: var(--bg-surface); border: 1px solid var(--border-accent); border-top: 2px solid var(--outline); padding: 1.5rem 2rem; border-radius: 2px; }
   .note-box h3 { font-size: var(--step-1); margin-bottom: 0.5rem; }
   .note-box p { margin: 0; color: var(--text-muted); }
   .about-text { max-width: 62ch; font-size: var(--step-1); }
 
   .hourglass-layout { display: grid; grid-template-columns: minmax(140px, 200px) 1fr; gap: 3rem; align-items: center; }
-  .hourglass-figure { color: var(--brand-accent, #127C44); width: 100%; max-width: 200px; margin: 0 auto; }
+  .hourglass-figure { color: var(--secondary); width: 100%; max-width: 200px; margin: 0 auto; }
   .hourglass-parts { display: grid; gap: 1.25rem; }
   .hourglass-parts .matrix-node { padding: 1.25rem 1.5rem; }
   .hourglass-parts .matrix-node h3 { font-size: var(--step-1); margin-bottom: 0.4rem; }
@@ -382,7 +382,7 @@ const faqs = [
   @media (max-width: 640px) { .hourglass-layout { grid-template-columns: 1fr; gap: 1.5rem; } }
 
   .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-  .problem-card { background: var(--bg-surface); border: 1px solid var(--border-accent); padding: 1.75rem; border-radius: 4px; }
+  .problem-card { background: var(--bg-surface); border: 1px solid var(--border-accent); border-top: 2px solid var(--outline); padding: 1.75rem; border-radius: 2px; }
   .problem-card h3 { font-size: var(--step-1); margin-bottom: 0.5rem; }
   .problem-card p { margin: 0 0 0.75rem 0; font-size: var(--step-0); }
   .example { color: var(--text-muted); }
@@ -391,7 +391,7 @@ const faqs = [
   .pricing-table th[scope="row"] { background: transparent; text-transform: none; letter-spacing: 0; font-size: var(--step-0); }
 
   .faq-list details { border-bottom: 1px solid var(--border-accent); padding: 1rem 0; max-width: 70ch; }
-  .faq-list summary { font-family: var(--font-sans); font-weight: 600; cursor: pointer; }
+  .faq-list summary { font-family: var(--font-serif); font-weight: 600; cursor: pointer; }
   .faq-list p { margin: 0.75rem 0 0 0; color: var(--text-muted); }
 
   .legal-attribution a { color: inherit; }
@@ -401,11 +401,11 @@ const faqs = [
       max-width: 56ch;
       margin: 2.5rem 0;
       padding-left: 1.25rem;
-      border-left: 4px solid var(--brand-accent, #127C44);
+      border-left: 4px solid var(--outline);
   }
 
   .about-layout { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; align-items: start; }
-  .about-photo { width: 200px; height: 200px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-accent); }
+  .about-photo { width: 200px; height: 200px; object-fit: cover; border-radius: 2px; border: 1px solid var(--border-accent); }
   
   @media (max-width: 640px) {
   .about-layout { grid-template-columns: 1fr; }
