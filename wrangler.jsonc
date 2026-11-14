@@ -6,7 +6,7 @@
   "routes": [
     { "pattern": "johnoosthuizen.com", "custom_domain": true },
     { "pattern": "www.johnoosthuizen.com", "custom_domain": true },
-    { "pattern": "thethesishourglass.johnoosthuizen.com", "custom_domain": true }
+    { "pattern": "tth.johnoosthuizen.com", "custom_domain": true }
   ],
 
   "observability": {
