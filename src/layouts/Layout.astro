@@ -156,8 +156,8 @@ const imageURL = new URL(image, Astro.site);
   .identity-badge-row { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
   .badge { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-accent); border-radius: 2px; }
   
-  .hourglass-section, .registry-section, .clinic-section, .coaching-section { margin-bottom: 6rem; }
-  .hourglass-section h2, .registry-section h2, .clinic-section h2, .coaching-section h2 { border-left: 3px solid var(--outline); padding-left: 1rem; margin-bottom: 3rem; }
+  .hourglass-section, .registry-section, .timeslot-section, .coaching-section { margin-bottom: 6rem; }
+  .hourglass-section h2, .registry-section h2, .timeslot-section h2, .coaching-section h2 { border-left: 3px solid var(--outline); padding-left: 1rem; margin-bottom: 3rem; }
   
   .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
   .matrix-node { background: var(--bg-surface); border: 1px solid var(--border-accent); border-top: 2px solid var(--outline); padding: 2rem; border-radius: 2px; }
@@ -170,11 +170,11 @@ const imageURL = new URL(image, Astro.site);
   .inverted-classroom-callout { background: var(--bg-band); border-left: 3px solid var(--outline); padding: 2rem; margin-bottom: 2.5rem; border-radius: 0 2px 2px 0; }
   .inverted-classroom-callout h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: var(--step-1); }
   .inverted-classroom-callout p { margin: 0; color: var(--text-muted); font-size: var(--step-0); line-height: 1.6; }
-  .clinic-timeline-wrapper h3 { font-size: var(--step-1); margin-bottom: 1.5rem; }
+  .timeslot-wrapper h3 { font-size: var(--step-1); margin-bottom: 1.5rem; }
   .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
   .time-slot { background: var(--bg-surface); border: 1px solid var(--border-accent); padding: 1rem; border-radius: 2px; font-size: var(--step-0); }
   .time-slot strong { color: var(--tertiary); display: block; font-family: var(--font-sans); margin-bottom: 0.25rem; }
-  .clinic-footnote { font-size: var(--step-0); color: var(--text-muted); font-style: italic; }
+  .timeslot-footnote { font-size: var(--step-0); color: var(--text-muted); font-style: italic; }
 
   .table-responsive { width: 100%; overflow-x: auto; }
   .pricing-table { width: 100%; border-collapse: collapse; text-align: left; font-size: var(--step-0); }

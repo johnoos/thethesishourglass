@@ -68,6 +68,14 @@ const problems = [
 
 const faqs = [
   {
+    q: 'How much time does it take?',
+    a: 'One hour a week for four weeks. All four students stay for the whole hour, because each of you also learns from the other three sentences. Preparation averages about 15 minutes a day in the week before each session, spent writing or revising one sentence. Altogether that is about three hours a week.',
+  },
+  {
+    q: 'Is three sentences enough?',
+    a: 'Three sentences state the whole argument: the problem, the question and the answer. They do not replace your thesis. They are a distillation, written separately from the text, and the same method works chapter by chapter.',
+  },
+  {
     q: 'Do I need a topic?',
     a: 'A rough idea is enough. Week 0 has a route for starting from scratch.',
   },
@@ -120,7 +128,7 @@ const faqs = [
 
 <Layout
   title="The Thesis Hourglass | Clear thesis arguments for music postgraduates"
-  description="A four-week online writing studio for music postgraduates. Groups of four. Write three sentences that describe your whole argument, with written feedback every week."
+  description="A four-week online writing studio for music postgraduates. Groups of four. Three sentences that state your whole thesis argument: about an hour a week for four weeks, with written feedback every week."
 >
   <main class="pipeline-main">
 
@@ -131,6 +139,9 @@ const faqs = [
 
       <h1>Write a thesis argument that holds up</h1>
       <p class="tagline">
+        Three sentences that state your whole thesis argument. One hour a week, four weeks.
+      </p>
+      <p class="hero-sub">
         A four-week online writing studio for music postgraduates. Groups of four. Your own writing, with written feedback and a live rewrite every week.
       </p>
 
@@ -161,10 +172,25 @@ const faqs = [
       </div>
     </section>
 
+    <section class="container idea-section" aria-labelledby="idea-heading">
+      <h2 id="idea-heading">The idea</h2>
+      <div class="idea-card">
+        <p>
+          A whole thesis or proposal argument can be stated in three sentences: the shift and the gap, the question, and the answer. They are not the opening sentences of any chapter, abstract or introduction. They are a distillation, written separately, against which every chapter can be tested. The same form works for each chapter.
+        </p>
+        <p class="idea-principle">
+          If you cannot summarise the most complex thesis argument in three sentences, you do not yet understand it.
+        </p>
+        <p class="idea-quote">
+          “What is well conceived is clearly stated.” <span>Nicolas Boileau, <em>L’Art poétique</em>, 1674</span>
+        </p>
+      </div>
+    </section>
+
     <section class="container leave-section" aria-labelledby="leave-heading">
       <h2 id="leave-heading">What you leave with</h2>
       <ol class="plain-list ordered">
-        <li>Three sentences that describe the argument of your thesis or proposal</li>
+        <li>Three sentences that state the whole argument of your thesis or proposal: the problem, the question and the answer</li>
         <li>A research question you can say aloud in one breath</li>
         <li>A short guide to five common argument problems, and how to spot them in your own writing</li>
         <li>Written comments on each sentence, so you know what to revise next</li>
@@ -200,7 +226,7 @@ const faqs = [
     <section id="how-it-works" class="coaching-section container" aria-labelledby="how-heading">
       <h2 id="how-heading">How it works</h2>
       <div class="table-responsive">
-        <table class="pricing-table" aria-label="The four-week programme">
+        <table class="pricing-table" aria-label="The four-week programme, about an hour a week">
           <thead>
             <tr><th scope="col">Week</th><th scope="col">Focus</th><th scope="col">You write</th></tr>
           </thead>
@@ -216,8 +242,14 @@ const faqs = [
         </table>
       </div>
       <p class="payoff">
-        These three sentences can form the basis of a research proposal, a thesis abstract, and an entire thesis.
+        These three sentences state the whole argument of your proposal or thesis: the problem, the question and the answer, at the size of the work.
       </p>
+      <div class="inverted-classroom-callout commitment-callout">
+        <h3>Four weeks, about an hour a week</h3>
+        <p>
+          All four students stay for the whole live hour: four 12-minute slots, about 48 minutes, because you also learn from three other students’ sentences. In the week before each session, preparation averages about 15 minutes a day, spent writing or revising one sentence. That is about four hours in the live sessions in total, and one new sentence a week to write.
+        </p>
+      </div>
       <div class="inverted-classroom-callout">
         <h3>Write first, then meet</h3>
         <p>
@@ -226,16 +258,16 @@ const faqs = [
       </div>
     </section>
 
-    <section class="clinic-section container" aria-labelledby="slot-heading">
+    <section class="timeslot-section container" aria-labelledby="slot-heading">
       <h2 id="slot-heading">Your weekly 12 minutes</h2>
-      <div class="clinic-timeline-wrapper">
+      <div class="timeslot-wrapper">
         <div class="timeline-grid">
           <div class="time-slot"><strong>Minutes 0 to 2</strong> You read your sentence aloud.</div>
           <div class="time-slot"><strong>Minutes 2 to 5</strong> I ask questions about it.</div>
           <div class="time-slot"><strong>Minutes 5 to 10</strong> We rewrite it together.</div>
           <div class="time-slot"><strong>Minutes 10 to 12</strong> We check it fits with your other sentences.</div>
         </div>
-        <p class="clinic-footnote">
+        <p class="timeslot-footnote">
           The other three students listen and apply what they hear to their own sentence.
         </p>
       </div>
@@ -362,6 +394,16 @@ const faqs = [
   .button-primary, .button-secondary { display: inline-block; min-width: 11rem; text-align: center; }
   .gate-card .button-primary, .gate-card .button-secondary { align-self: flex-start; }
   .hero-note { color: var(--text-muted); font-size: var(--step-0); margin: 0; }
+  .hero-sub { color: var(--text-muted); font-size: var(--step-0); max-width: 58ch; margin: -1.5rem auto 2.5rem auto; line-height: 1.6; }
+
+  .idea-section { margin-bottom: 5rem; }
+  .idea-section h2 { border-left: 3px solid var(--outline); padding-left: 1rem; margin-bottom: 2rem; }
+  .idea-card { background: var(--bg-surface); border: 1px solid var(--border-accent); border-left: 3px solid var(--outline); padding: 1.75rem 2rem; border-radius: 2px; max-width: 70ch; }
+  .idea-card p { margin: 0 0 1rem 0; }
+  .idea-principle { font-family: var(--font-serif); font-size: var(--step-1); font-weight: 600; }
+  .idea-quote { color: var(--text-muted); font-style: italic; margin-bottom: 0 !important; }
+  .idea-quote span { display: block; font-style: normal; font-size: var(--step-0); margin-top: 0.25rem; }
+  .commitment-callout { margin-top: 0; }
 
   .audience-section, .leave-section, .about-section, .faq-section { margin-bottom: 5rem; }
   .audience-section h2, .leave-section h2, .about-section h2, .faq-section h2 { border-left: 3px solid var(--outline); padding-left: 1rem; margin-bottom: 2rem; }
