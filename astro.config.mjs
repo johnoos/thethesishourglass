@@ -13,6 +13,11 @@ export default defineConfig({
   output: 'server',
   site: SITE,
 
+  // Short address for the flyer, e.g. tth.johnoosthuizen.com/flyer
+  redirects: {
+    '/flyer': { status: 302, destination: '/assets/the-thesis-hourglass-flyer.pdf' },
+  },
+
   integrations: [
     sitemap({
       customPages: vaultFiles
