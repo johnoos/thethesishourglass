@@ -45,7 +45,8 @@ Notes on reading these files:
 | 16 Nov 2026 | **Marketing audience.** Universities in South Africa first, then internationally, and postgraduate students directly. |
 | 16 Nov 2026 | **Coaching, not editing.** The CV says John coaches how an argument is built and does not edit or write for students or replace supervisors. This matches the Thesis Hourglass flyer and website. The earlier "expert proofreading" and "editorial governance" claims were removed. |
 | 16 Nov 2026 | **File naming.** `public/assets/cv.pdf` keeps its name because `src/data/vault.js` links to that exact slug, and `astro.config.mjs` builds the sitemap from the same list. No other PDF was renamed. The repo's CV name contains no month, so there was no month to change in the file name; the month ("November 2026") is printed in the CV footer instead. |
-| 16 Nov 2026 | **Contact details on the CV.** The email is now john@johnoosthuizen.com (the address on the Thesis Hourglass flyer) instead of joosthuizen@gmail.com, and the site johnoosthuizen.com is listed. Phone and LinkedIn are unchanged. The academic profile line (academicprofile.johnoosthuizen.com) was removed on 16 Nov 2026 because the URL no longer works, and the ORCID iD is shown as the link orcid.org/0000-0002-3887-9925. |
+| 16 Nov 2026 | **Contact details on the CV.** The email is now john@johnoosthuizen.com (the address on the Thesis Hourglass flyer) instead of joosthuizen@gmail.com, and the site johnoosthuizen.com is listed. Phone and LinkedIn are unchanged. The academic profile line (academicprofile.johnoosthuizen.com) was removed because the URL no longer works. |
+| 17 Nov 2026 | **No ORCID or Google Scholar.** John decided not to use either. All references were removed from the CV and from the home page's structured data (`src/pages/index.astro`). His reasoning: they are aimed at scholars, and the CV now targets business people, universities and postgraduate students as clients. He is also retired from active lecturing and no longer part of Stellenbosch University. |
 | 16 Nov 2026 | **Design.** The CV uses the website's palette (navy `#14213d`, green `#127C44`, gold `#b08d57`) on white, A4, two pages. |
 
 Decisions made in earlier turns of the CV thread are not recorded here, because they were not available when this file was created. Add any that matter to the table above.
@@ -73,6 +74,6 @@ Decisions made in earlier turns of the CV thread are not recorded here, because 
 
 ## 5. Not verifiable from the PDFs (kept as John stated; confirm if needed)
 
-- The employment entries (Stellenbosch University lecturer, 2018 to present; IBM / Sanlam / global clients, 2007-2018) and the work in Singapore, Nigeria and South Africa. The certificates are consistent with the IBM years but do not prove the roles.
+- The employment entries (Stellenbosch University lecturer, 2018 to present, **which is now out of date**: on 17 Nov 2026 John said he has retired from active lecturing and is no longer part of Stellenbosch University, and the CV still says "present" until he gives the end date; IBM / Sanlam / global clients, 2007-2018) and the work in Singapore, Nigeria and South Africa. The certificates are consistent with the IBM years but do not prove the roles.
 - The article's venue and year (*For the Music Director*, SACOS, 2026). `article.pdf` is the manuscript and does not print a journal or date. The CV now says 2026 without a month; it earlier said June 2026 as an upcoming date.
 - Music tools (Sibelius, Finale, MuseScore) and reference managers (Mendeley, Zotero, EndNote).
