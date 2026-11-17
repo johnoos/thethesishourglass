@@ -48,6 +48,7 @@ Notes on reading these files:
 | 16 Nov 2026 | **Contact details on the CV.** The email is now john@johnoosthuizen.com (the address on the Thesis Hourglass flyer) instead of joosthuizen@gmail.com, and the site johnoosthuizen.com is listed. Phone and LinkedIn are unchanged. The academic profile line (academicprofile.johnoosthuizen.com) was removed because the URL no longer works. |
 | 17 Nov 2026 | **Stellenbosch end date.** The CV entry reads "2018 – Nov 2026" instead of "2018 – present", because John has retired from active lecturing. |
 | 17 Nov 2026 | **Past tense.** The Stellenbosch bullet about peer review now reads "contributed to the peer review of musicological literature", since the post has ended. |
+| 17 Nov 2026 | **Publisher settled.** Prentice Hall PTR (with IBM ITSO) is final for the VisualAge book. No further change needed to the CV. |
 | 17 Nov 2026 | **No ORCID or Google Scholar.** John decided not to use either. All references were removed from the CV and from the home page's structured data (`src/pages/index.astro`). His reasoning: they are aimed at scholars, and the CV now targets business people, universities and postgraduate students as clients. He is also retired from active lecturing and no longer part of Stellenbosch University. |
 | 16 Nov 2026 | **Design.** The CV uses the website's palette (navy `#14213d`, green `#127C44`, gold `#b08d57`) on white, A4, two pages. |
 
@@ -66,7 +67,7 @@ Decisions made in earlier turns of the CV thread are not recorded here, because 
 | Master Certified IT Architect, IBM Certified Professional and UNCG exchange semester were missing | `ea-certs.pdf`, `intl-exch-student.pdf`. | Added. The UNCG entry says "admitted" because the PDF is an admission letter, not proof of attendance. Also added: NUS ISS NICF Enterprise Architecture Practitioner (April 2010) and the 1995 ITSO residency. |
 | TOGAF 8 listed without dates | Registered 19 May 2010, valid to 2012. | Dates added. Master Certified IT Architect: registered 2008, valid to 2011. |
 
-**Open: McGraw-Hill.** On 16 Nov 2026 John said the VisualAge book was published by McGraw-Hill and that this appears on the cover or front matter. The cover, title page and copyright page in `books.pdf` show IBM ITSO and Prentice Hall PTR only, and a text search finds no "McGraw" anywhere in the file. The CV follows the PDF. If a McGraw-Hill edition or page exists, add it to `books.pdf` and update the CV and this table.
+**Resolved: publisher.** On 17 Nov 2026 John confirmed that his earlier McGraw-Hill recollection was wrong. The VisualAge book's publisher is Prentice Hall PTR, as printed on the cover and title page in `books.pdf`, and the CV already says so.
 
 ## 4. Rebuilding the CV
 
