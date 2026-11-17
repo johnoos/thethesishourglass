@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /register/thanks
+Disallow: /api/
+
+Sitemap: https://johnoosthuizen.com/sitemap.xml

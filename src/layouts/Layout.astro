@@ -4,6 +4,7 @@ interface Props {
 	description?: string;
 	noindex?: boolean;
 	image?: string;
+	jsonld?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
@@ -11,10 +12,14 @@ const {
 	description = 'A four-week online writing studio that helps music postgraduates write a clear, defensible thesis argument.',
 	noindex = false,
 	image = '/images/og-banner.jpg',
+	jsonld,
 } = Astro.props;
 
+// Astro.site is https://johnoosthuizen.com, so the canonical address is always the
+// apex domain, whichever host (apex, www or tth) served the page.
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
+const jsonldString = jsonld ? JSON.stringify(jsonld).replace(/</g, '\\u003c') : '';
 ---
 
 <!doctype html>
@@ -29,10 +34,23 @@ const imageURL = new URL(image, Astro.site);
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="The Thesis Hourglass" />
+		<meta property="og:locale" content="en_ZA" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:image" content={imageURL} />
 		<meta property="og:image:alt" content="The Thesis Hourglass: clear thesis arguments for music postgraduates" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<title>{title}</title>
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={imageURL} />
+		{jsonldString && <script type="application/ld+json" set:html={jsonldString} />}
 	</head>
 	<body>
 		<slot />

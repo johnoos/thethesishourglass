@@ -124,11 +124,53 @@ const faqs = [
     a: 'I use it only to run the studio and reply to you. You can ask me to delete it at any time. Read the privacy notice for details.',
   },
 ];
+
+// Structured data: tells search engines who the person and the studio are.
+// Only facts already on the site or the CV are used here.
+const siteUrl = 'https://johnoosthuizen.com';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#john`,
+      name: 'John Oosthuizen',
+      alternateName: 'John Ernst Oosthuizen',
+      honorificPrefix: 'Dr',
+      url: `${siteUrl}/`,
+      image: `${siteUrl}/images/john-oosthuizen.jpg`,
+      description: 'Dr John Oosthuizen holds a PhD in Music from Stellenbosch University, has taught music theory and analysis there, and coaches music postgraduates in structuring their thesis argument.',
+      jobTitle: 'Thesis writing coach for music postgraduates',
+      alumniOf: { '@type': 'CollegeOrUniversity', name: 'Stellenbosch University' },
+      knowsAbout: ['Music theory and analysis', 'Organ music', 'Thesis writing', 'Research argument structure'],
+      sameAs: ['https://orcid.org/0000-0002-3887-9925'],
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#studio`,
+      name: 'The Thesis Hourglass',
+      url: `${siteUrl}/`,
+      logo: `${siteUrl}/images/the-thesis-hourglass-logo.png`,
+      description: 'An online writing studio for music postgraduates: three sentences that state your whole thesis argument.',
+      founder: { '@id': `${siteUrl}/#john` },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      name: 'The Thesis Hourglass',
+      alternateName: 'Dr John Oosthuizen',
+      url: `${siteUrl}/`,
+      publisher: { '@id': `${siteUrl}/#studio` },
+      inLanguage: 'en',
+    },
+  ],
+};
 ---
 
 <Layout
-  title="The Thesis Hourglass | Clear thesis arguments for music postgraduates"
-  description="A four-week online writing studio for music postgraduates. Groups of four. Three sentences that state your whole thesis argument: about an hour a week for four weeks, with written feedback every week."
+  title="Dr John Oosthuizen | The Thesis Hourglass writing studio"
+  description="Dr John Oosthuizen, PhD (Music), runs The Thesis Hourglass, an online writing studio for music postgraduates: three sentences that state your whole thesis argument."
+  jsonld={structuredData}
 >
   <main class="site-main">
 
